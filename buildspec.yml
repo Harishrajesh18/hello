@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      python: 3.11  # Change to your preferred version
+      python: 3.11
     commands:
       - echo Installing dependencies...
       - pip install --upgrade pip
@@ -11,13 +11,8 @@ phases:
 
   build:
     commands:
-      - echo Build phase complete. Nothing to build for Flask.
-
-  post_build:
-    commands:
-      - echo Packaging application for deployment...
-      - zip -r app.zip * .[^.]*
+      - echo Build phase completed.
 
 artifacts:
   files:
-    - app.zip
+    - '**/*'
